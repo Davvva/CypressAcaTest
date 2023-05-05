@@ -4,7 +4,10 @@ import { bodyData } from "../../fixtures/bodyDataPosts.json";
 const newData = JSON.parse(JSON.stringify(bodyData));
 describe("API testing", () => {
   it("API testing", () => {
-    cy.request("GET", "https://jsonplaceholder.typicode.com/posts").then(
+    cy.request({
+      method: "GET",
+      url: `${Cypress.env("globalApiUrl")}posts/1`
+.then(
       (response) => {
         cy.log(response);
         expect(response.body[5].id).to.eq(6);
@@ -13,7 +16,7 @@ describe("API testing", () => {
         );
         expect(response.body.length).to.eq(100);
       }
-    );
+    )
   });
 
   it("Add New Post", () => {
@@ -37,6 +40,8 @@ describe("API testing", () => {
       expect(response.body).has.property("body", "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto")
 
     })
+
 });
-    })
+})
+})   
 

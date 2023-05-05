@@ -6,9 +6,9 @@ describe("API testing", () => {
   it("Post requests", () => {
     cy.fixture("createJson").then((payload) => {
       cy.request({
-        method: "POST",
-        url: "https://jsonplaceholder.typicode.com/posts",
-        body: {
+          method: "POST",
+          url: `${Cypress.env("globalApiUrl")}posts/1`,
+          body: {
           userId: payload.userId,
           id: payload.id,
           title: payload.title,

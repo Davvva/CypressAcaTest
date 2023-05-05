@@ -4,10 +4,10 @@ describe("API testing", () => {
   it("Postcomments requests", () => {
     cy.fixture("createusers").then((payload) => {
       cy.request({
-        method: "POST",
-        url: "https://jsonplaceholder.typicode.com/comments",
+          method: "GET",
+          url: `${Cypress.env("globalApiUrl")}posts/1`/jsonplaceholder.typicode.com/comments,
 
-        body: {
+        body : {
           postId: payload.postId,
           //   "id": payload.id,
           name: payload.name,

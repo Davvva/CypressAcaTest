@@ -11,8 +11,8 @@ describe("API testing", () => {
       })
       .then((nameOfsite) => {
         cy.request({
-          method: "GET",
-          url: "https://jsonplaceholder.typicode.com/users" 
+            method: "GET",
+            url: `${Cypress.env("globalApiUrl")}posts/1`
         }).then((resp) => {
           expect(resp.status).to.eq(200)
           expect(resp.body[0]).to.have.property('website', nameOfsite)

@@ -23,7 +23,7 @@ describe("API testing", () => {
 
         cy.request({
           method: "PUT",
-          url: "https://jsonplaceholder.typicode.com/posts/",
+          url: `${Cypress.env("globalApiUrl")}posts/1`,
 
           body: {
             "id": 1,

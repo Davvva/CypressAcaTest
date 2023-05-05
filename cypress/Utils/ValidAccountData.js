@@ -53,3 +53,14 @@ export const randomemail = {
         return result + '@mail.mail'
     }
  }
+ export const ultimateqasignup = {
+    firstName: 'David',
+    email: 'davidik936@gmail.com',
+    massage: 'Im very smart',
+    answer1: '9',
+    answer2: '22',
+    answerforoutforms:'11',
+    surname: 'Avdalyan',
+    emergenecyname:'Egor',
+    emergenecysurname: 'Pupkin'
+}
